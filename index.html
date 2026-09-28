@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Aura BioPharma — Catálogo Científico de Peptídeos, Emagrecedores e Hormônios</title>
+  <meta name="description" content="Aura BioPharma: Catálogo acadêmico e técnico de peptídeos biomiméticos, moduladores metabólicos e formulações com laudos HPLC e envio seguro." />
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%230d9488'/><path d='M30 65 L50 25 L70 65 Z' fill='none' stroke='white' stroke-width='8'/><circle cx='50' cy='48' r='7' fill='white'/></svg>" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            border: 'var(--border-color)',
+            background: 'var(--bg-primary)',
+            surface: 'var(--bg-surface)',
+            card: 'var(--bg-card)',
+            foreground: 'var(--text-primary)',
+            'muted-foreground': 'var(--text-muted)',
+            secondary: 'var(--text-secondary)',
+            teal: {
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="min-h-screen flex flex-col bg-background text-foreground antialiased selection:bg-teal-500 selection:text-white">
+
+  <!-- ==================== TOP ANNOUNCEMENT BAR ==================== -->
+  <aside aria-label="Aviso de Frete e Segurança" class="bg-gradient-to-r from-teal-800 via-teal-900 to-slate-900 text-teal-100 text-xs py-2 px-4 shadow-sm relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between text-[11px] sm:text-xs">
+      <div class="flex items-center gap-2 overflow-hidden truncate">
+        <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-300">
+          <i data-lucide="truck" class="size-3.5 shrink-0"></i>
+          Envio Climatizado para todo o Brasil
+        </span>
+        <span class="hidden sm:inline text-teal-300/40">|</span>
+        <span class="hidden sm:inline text-teal-200">Frete Grátis em pedidos acima de R$ 500</span>
+      </div>
+      
+      <div class="flex items-center gap-4 shrink-0 font-medium">
+        <span class="hidden md:inline-flex items-center gap-1 text-teal-300">
+          <i data-lucide="shield-check" class="size-3.5 text-emerald-400"></i>
+          Laudos de Pureza HPLC
+        </span>
+        <a href="https://wa.me/5521967538035" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-500/20 hover:bg-teal-500/30 text-teal-200 font-semibold border border-teal-500/30 transition-all text-[11px]">
+          <i data-lucide="message-circle" class="size-3.5 text-emerald-400"></i>
+          WhatsApp (21) 96753-8035
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MAIN HEADER ==================== -->
+  <header class="relative z-40 glass-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-6">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+        <div class="size-10 sm:size-11 rounded-2xl bg-gradient-to-tr from-teal-600 via-teal-500 to-sky-500 flex items-center justify-center text-white shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform">
+          <i data-lucide="atom" class="size-6 stroke-[2.2]"></i>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-foreground">
+              AURA<span class="text-teal-600 dark:text-teal-400 font-black">.</span>BIO
+            </span>
+            <span class="text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20">
+              Lab
+            </span>
+          </div>
+          <span class="text-[10px] text-muted-foreground font-medium -mt-0.5 hidden xs:block">
+            Biotecnologia & Bem-estar
+          </span>
+        </div>
+      </a>
+
+      <!-- Search Bar with Live Autocomplete -->
+      <div class="relative flex-1 max-w-xl mx-2 sm:mx-4">
+        <div class="relative flex items-center">
+          <i data-lucide="search" class="size-4 text-muted-foreground absolute left-3.5 pointer-events-none"></i>
+          <input 
+            type="search" 
+            id="main-search-input"
+            aria-label="Buscar substâncias, laboratórios ou apresentações" 
+            placeholder="Buscar por substância, lab ou dosagem (ex: Tirzepatida, BPC, Landerlan)..."
+            autocomplete="off"
+            class="w-full h-10 sm:h-11 pl-10 pr-9 rounded-2xl border border-border bg-muted/40 hover:bg-muted/60 focus:bg-surface text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500 transition-all shadow-inner"
+          />
+          <button type="button" id="clear-search-btn" class="absolute right-3 text-muted-foreground hover:text-foreground hidden" title="Limpar busca">
+            <i data-lucide="x" class="size-3.5"></i>
+          </button>
+        </div>
+
+        <!-- Live Autocomplete Popover -->
+        <div id="search-autocomplete-dropdown" class="absolute left-0 right-0 top-full mt-1.5 bg-surface border border-border rounded-2xl shadow-2xl p-1.5 z-50 hidden"></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <!-- Theme Switcher -->
+        <button type="button" id="theme-toggle-btn" 
+          aria-label="Alternar tema claro/escuro" 
+          class="size-10 sm:size-11 rounded-2xl border border-border hover:bg-muted/60 flex items-center justify-center transition-colors text-foreground">
+          <i data-lucide="moon" class="size-5"></i>
+        </button>
+
+        <!-- Cart Drawer Button -->
+        <button type="button" id="cart-drawer-trigger" 
+          aria-label="Abrir carrinho de compras" 
+          class="relative h-10 sm:h-11 px-3 sm:px-4 rounded-2xl bg-teal-600 hover:bg-teal-700 active:scale-95 text-white flex items-center gap-2 shadow-lg shadow-teal-600/25 transition-all">
+          <i data-lucide="shopping-bag" class="size-5"></i>
+          <span class="hidden sm:inline font-semibold text-xs">Pedido</span>
+          <span class="cart-count-badge hidden size-5 rounded-full bg-white text-teal-700 font-extrabold text-[11px] flex items-center justify-center shadow-sm">
+            0
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO PRESENTATION BANNER ==================== -->
+  <section class="relative overflow-hidden border-b border-border py-10 sm:py-16 hero-glow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+        
+        <!-- Academic Pill Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-700 dark:text-teal-300 text-xs font-semibold mb-4 animate-pulse">
+          <i data-lucide="sparkles" class="size-3.5 text-teal-500"></i>
+          Catálogo Farmacológico & Biotecnológico 2026
+        </div>
+
+        <h1 class="font-heading font-extrabold text-2xl sm:text-4xl md:text-5xl text-foreground tracking-tight leading-tight">
+          Inovação Molecular, Peptídeos & <span class="bg-gradient-to-r from-teal-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">Alta Precisão</span>
+        </h1>
+
+        <p class="mt-4 text-sm sm:text-base text-secondary max-w-2xl leading-relaxed">
+          Explore o portfólio completo com mais de 110 itens catalogados entre agonistas metabólicos (GLP-1), peptídeos biomiméticos e formulações especializadas com procedência garantida.
+        </p>
+
+        <!-- Quick CTAs -->
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href="#catalogo" class="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-semibold text-xs sm:text-sm shadow-md shadow-teal-600/30 flex items-center gap-2 transition-all">
+            <i data-lucide="layout-grid" class="size-4"></i>
+            Explorar Catálogo Completo
+          </a>
+          <a href="https://wa.me/5521967538035" target="_blank" class="px-5 py-2.5 rounded-xl border border-border bg-surface hover:bg-muted font-semibold text-xs sm:text-sm text-foreground flex items-center gap-2 transition-all">
+            <i data-lucide="message-circle" class="size-4 text-emerald-500"></i>
+            Suporte Farmacêutico
+          </a>
+        </div>
+
+        <!-- 4 Trust Badges -->
+        <div class="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 w-full text-left">
+          
+          <div class="p-3.5 rounded-2xl border border-border/80 bg-surface/80 backdrop-blur-sm shadow-sm flex items-start gap-3">
+            <div class="size-9 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0">
+              <i data-lucide="microscope" class="size-5"></i>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-foreground">Pureza Analítica</h4>
+              <p class="text-[11px] text-muted-foreground mt-0.5">Laudos HPLC & Espectrometria</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl border border-border/80 bg-surface/80 backdrop-blur-sm shadow-sm flex items-start gap-3">
+            <div class="size-9 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0">
+              <i data-lucide="snowflake" class="size-5"></i>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-foreground">Cadeia de Frio</h4>
+              <p class="text-[11px] text-muted-foreground mt-0.5">Embalagem térmica com gelo seco</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl border border-border/80 bg-surface/80 backdrop-blur-sm shadow-sm flex items-start gap-3">
+            <div class="size-9 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
+              <i data-lucide="shield-check" class="size-5"></i>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-foreground">Envio Discreto</h4>
+              <p class="text-[11px] text-muted-foreground mt-0.5">Rastreamento Sedex em tempo real</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-2xl border border-border/80 bg-surface/80 backdrop-blur-sm shadow-sm flex items-start gap-3">
+            <div class="size-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="headphones" class="size-5"></i>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-foreground">Suporte Técnico</h4>
+              <p class="text-[11px] text-muted-foreground mt-0.5">Orientação técnica especializada</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CATALOG & FILTERS SECTION ==================== -->
+  <main id="catalogo" class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-8 flex flex-col gap-6">
+    
+    <!-- Category Tabs Navigation -->
+    <div class="flex flex-col gap-3">
+      <div class="flex items-center justify-between">
+        <h2 class="font-heading font-extrabold text-xl sm:text-2xl text-foreground">
+          Linhas Farmacológicas
+        </h2>
+        <span id="results-counter" class="text-xs text-muted-foreground font-medium">
+          Carregando catálogo...
+        </span>
+      </div>
+
+      <!-- Main Category Pills -->
+      <nav aria-label="Filtro de Categorias" class="overflow-x-auto pb-1 scrollbar-none">
+        <div class="inline-flex items-center gap-2 p-1.5 rounded-2xl border border-border bg-card/60">
+          <button type="button" class="filter-tab active px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap" data-category="all">
+            <i data-lucide="layers" class="size-3.5"></i>
+            Todos os Produtos
+            <span id="count-all" class="opacity-75 text-[10px] font-mono">(0)</span>
+          </button>
+          
+          <button type="button" class="filter-tab px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 text-muted-foreground hover:text-foreground whitespace-nowrap" data-category="emagrecedores">
+            <i data-lucide="flame" class="size-3.5 text-amber-500"></i>
+            Emagrecedores & GLP-1
+            <span id="count-emagrecedores" class="opacity-75 text-[10px] font-mono">(0)</span>
+          </button>
+
+          <button type="button" class="filter-tab px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 text-muted-foreground hover:text-foreground whitespace-nowrap" data-category="peptideos">
+            <i data-lucide="dna" class="size-3.5 text-sky-500"></i>
+            Peptídeos de Precisão
+            <span id="count-peptideos" class="opacity-75 text-[10px] font-mono">(0)</span>
+          </button>
+
+          <button type="button" class="filter-tab px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 text-muted-foreground hover:text-foreground whitespace-nowrap" data-category="hormonios">
+            <i data-lucide="activity" class="size-3.5 text-purple-500"></i>
+            Hormônios & Compostos
+            <span id="count-hormonios" class="opacity-75 text-[10px] font-mono">(0)</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Brands & Laboratories Chips Filter -->
+      <div class="overflow-x-auto pb-1 scrollbar-none mt-1">
+        <div id="brands-filter-container" class="flex items-center gap-2"></div>
+      </div>
+    </div>
+
+    <!-- Controls Bar: Sort, View Mode & Filters -->
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-border">
+      
+      <!-- Left: Only promotions toggle -->
+      <div class="flex items-center gap-3">
+        <label class="inline-flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="promo-only-filter" class="rounded border-border text-teal-600 focus:ring-teal-500 size-4" />
+          <span class="text-xs font-semibold text-foreground flex items-center gap-1">
+            <i data-lucide="tag" class="size-3.5 text-rose-500"></i>
+            Apenas em Promoção
+          </span>
+        </label>
+      </div>
+
+      <!-- Right: Sort Dropdown & Grid/List View Mode -->
+      <div class="flex items-center gap-3">
+        <!-- Sort Select -->
+        <div class="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <label for="sort-select" class="hidden sm:inline">Ordenar:</label>
+          <select id="sort-select" class="h-9 rounded-xl border border-border bg-surface px-2.5 text-xs font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+            <option value="relevancia">Relevância</option>
+            <option value="menor-preco">Menor Preço</option>
+            <option value="maior-preco">Maior Preço</option>
+            <option value="nome">Nome (A-Z)</option>
+            <option value="promocao">Maior Desconto</option>
+          </select>
+        </div>
+
+        <!-- View Mode Switch -->
+        <div class="flex items-center border border-border rounded-xl p-0.5 bg-surface">
+          <button type="button" id="btn-view-grid" aria-label="Visualização em Grade" class="size-8 rounded-lg flex items-center justify-center bg-muted text-foreground transition-colors" title="Grade">
+            <i data-lucide="layout-grid" class="size-4"></i>
+          </button>
+          <button type="button" id="btn-view-list" aria-label="Visualização em Lista" class="size-8 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors" title="Lista">
+            <i data-lucide="list" class="size-4"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Products Grid / List Container -->
+    <div id="products-container" class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+      <!-- Dynamically populated by app.js -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-16 px-4 border border-dashed border-border rounded-3xl bg-muted/20">
+      <div class="size-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-3 text-muted-foreground">
+        <i data-lucide="package-search" class="size-8"></i>
+      </div>
+      <h3 class="font-heading font-bold text-lg text-foreground">Nenhum produto encontrado</h3>
+      <p class="text-xs text-muted-foreground mt-1 max-w-sm mx-auto">
+        Tente ajustar sua busca, remover os filtros aplicados ou escolher outra categoria.
+      </p>
+      <button type="button" 
+        onclick="document.getElementById('main-search-input').value = ''; state.searchQuery = ''; state.activeBrand = 'all'; state.onlyPromotions = false; initBrandsList(); renderProducts();"
+        class="mt-4 px-4 py-2 rounded-xl bg-teal-600 text-white font-semibold text-xs hover:bg-teal-700 transition-colors">
+        Limpar Filtros de Busca
+      </button>
+    </div>
+
+    <!-- Load More Container -->
+    <div id="load-more-container" class="flex justify-center pt-4 pb-6 hidden">
+      <button type="button" id="load-more-btn" class="px-6 py-3 rounded-2xl border border-border bg-surface hover:bg-muted font-bold text-xs sm:text-sm text-foreground shadow-sm transition-all flex items-center gap-2">
+        <i data-lucide="chevron-down" class="size-4 text-teal-600"></i>
+        Carregar mais produtos
+      </button>
+    </div>
+
+    <!-- ==================== EDUCATIONAL FAQ ACCORDION ==================== -->
+    <section class="mt-12 pt-10 border-t border-border">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-8">
+          <span class="text-xs font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest bg-teal-500/10 px-3 py-1 rounded-full">
+            Seção de Aprendizado & Pesquisa
+          </span>
+          <h2 class="font-heading font-extrabold text-2xl text-foreground mt-3">
+            Perguntas Frequentes & Fundamentos Científicos
+          </h2>
+          <p class="text-xs text-muted-foreground mt-1">
+            Informações acadêmicas sobre o mecanismo de ação dos compostos e a logística farmacêutica
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          
+          <details class="group border border-border rounded-2xl p-4 bg-card/60 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-foreground">
+              <span>Como funcionam os peptídeos agonistas de GLP-1 e GIP no organismo?</span>
+              <span class="transition-transform group-open:rotate-180 text-muted-foreground">
+                <i data-lucide="chevron-down" class="size-4"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-xs text-secondary leading-relaxed pl-1 border-l-2 border-teal-500">
+              Agonistas de receptores GLP-1 (como Semaglutida e Tirzepatida) imitam os hormônios incretínicos naturais liberados pelo intestino delgado após as refeições. Eles retardam o esvaziamento gástrico, aumentam a secreção de insulina dependente de glicose no pâncreas e agem no hipotálamo reduzindo o apetite e aumentando a saciedade.
+            </p>
+          </details>
+
+          <details class="group border border-border rounded-2xl p-4 bg-card/60 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-foreground">
+              <span>Por que a conservação sob refrigeração (cadeia de frio) é indispensável?</span>
+              <span class="transition-transform group-open:rotate-180 text-muted-foreground">
+                <i data-lucide="chevron-down" class="size-4"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-xs text-secondary leading-relaxed pl-1 border-l-2 border-teal-500">
+              Proteínas e cadeias peptídicas possuem estrutura tridimensional sensível à temperatura (desnaturação térmica). Em temperaturas elevadas, ocorrem quebras nas pontes de hidrogênio e oxidação das cadeias laterais dos aminoácidos, inativando a substância. Por isso, utilizam-se caixas isotérmicas e agentes refrigerantes específicos.
+            </p>
+          </details>
+
+          <details class="group border border-border rounded-2xl p-4 bg-card/60 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-foreground">
+              <span>O que é análise HPLC de pureza citada nos laudos laboratoriais?</span>
+              <span class="transition-transform group-open:rotate-180 text-muted-foreground">
+                <i data-lucide="chevron-down" class="size-4"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-xs text-secondary leading-relaxed pl-1 border-l-2 border-teal-500">
+              HPLC (High-Performance Liquid Chromatography ou Cromatografia Líquida de Alta Eficiência) é o padrão-ouro na indústria química para separar, identificar e quantificar cada componente de uma mistura, assegurando que o produto contenha mais de 98-99% do princípio ativo declarado, sem contaminantes residuais.
+            </p>
+          </details>
+
+          <details class="group border border-border rounded-2xl p-4 bg-card/60 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-foreground">
+              <span>Como é garantida a segurança e sigilo no envio dos pedidos?</span>
+              <span class="transition-transform group-open:rotate-180 text-muted-foreground">
+                <i data-lucide="chevron-down" class="size-4"></i>
+              </span>
+            </summary>
+            <p class="mt-3 text-xs text-secondary leading-relaxed pl-1 border-l-2 border-teal-500">
+              Todos os envios são realizados com embalagem externa 100% discreta e inviolável, sem qualquer menção externa ao conteúdo, contando com código de rastreamento direto dos Correios (Sedex Express) e seguro total contra extravios.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="mt-16 border-t border-border bg-card/70 py-12 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Brand Info -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="size-8 rounded-xl bg-teal-600 flex items-center justify-center text-white">
+            <i data-lucide="atom" class="size-5"></i>
+          </div>
+          <span class="font-heading font-black text-lg text-foreground">AURA BIOPHARMA</span>
+        </div>
+        <p class="text-xs text-muted-foreground max-w-md leading-relaxed">
+          Catálogo acadêmico e técnico especializado em biologia celular, endocrinologia e sinalização de peptídeos. Plataforma desenvolvida com excelência para fins educacionais e de demonstração prática de e-commerce farmacêutico.
+        </p>
+        
+        <div class="mt-4 flex items-center gap-3">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-semibold">
+            <i data-lucide="shield-check" class="size-3.5"></i>
+            Ambiente Seguro SSL 256-bit
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-[11px] font-semibold">
+            <i data-lucide="box" class="size-3.5"></i>
+            100% Climatizado
+          </span>
+        </div>
+      </div>
+
+      <!-- Institutional Links -->
+      <div>
+        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-foreground mb-3">
+          Institucional
+        </h4>
+        <ul class="space-y-2 text-xs text-muted-foreground">
+          <li><a href="#catalogo" class="hover:text-foreground transition-colors">Linhas de Produtos</a></li>
+          <li><a href="#catalogo" class="hover:text-foreground transition-colors">Catálogo de Produtos</a></li>
+          <li><a href="#" onclick="showToast('Horário: Seg a Sex das 09h às 20h', 'info'); return false;" class="hover:text-foreground transition-colors">Horário de Atendimento</a></li>
+          <li><a href="https://wa.me/5521967538035" target="_blank" class="hover:text-foreground transition-colors">Canal de Suporte WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <!-- Institutional Guarantee & Terms -->
+      <div>
+        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-foreground mb-3">
+          Garantia de Qualidade
+        </h4>
+        <p class="text-xs text-muted-foreground leading-relaxed">
+          Compostos certificados com alto grau de pureza por ensaios cromatográficos (HPLC). Distribuição com controle térmico rigoroso e atendimento humano personalizado do pedido à entrega.
+        </p>
+        <p class="text-[11px] text-teal-600 dark:text-teal-400 font-semibold mt-2">
+          © 2026 Aura BioPharma. Todos os direitos reservados.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== CART SLIDE-OVER DRAWER ==================== -->
+  <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  
+  <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full sm:w-[440px] bg-surface border-l border-border shadow-2xl z-50 flex flex-col translate-x-full drawer-right">
+    
+    <!-- Drawer Header -->
+    <div class="p-4 sm:p-5 border-b border-border flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="shopping-bag" class="size-5 text-teal-600"></i>
+        <h3 class="font-heading font-bold text-base text-foreground">Seu Carrinho</h3>
+        <span class="cart-count-badge hidden text-xs font-bold px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-600">0 itens</span>
+      </div>
+      <button type="button" id="close-cart-btn" class="p-1.5 text-muted-foreground hover:text-foreground rounded-lg transition-colors" title="Fechar carrinho">
+        <i data-lucide="x" class="size-5"></i>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="p-3 bg-muted/40 border-b border-border text-xs">
+      <div class="flex justify-between items-center mb-1 text-[11px]">
+        <span id="free-shipping-text" class="text-muted-foreground">Faltam R$ 500,00 para Frete Grátis</span>
+        <span class="font-bold text-teal-600">Meta: R$ 500</span>
+      </div>
+      <div class="w-full bg-border rounded-full h-1.5 overflow-hidden">
+        <div id="free-shipping-progress" class="bg-teal-500 h-full w-0 transition-all duration-300"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scroll Area -->
+    <div class="flex-1 overflow-y-auto p-4 space-y-3">
+      <div id="cart-items-list" class="space-y-3"></div>
+
+      <!-- Empty State inside cart -->
+      <div id="cart-empty-state" class="text-center py-16 px-4">
+        <div class="size-16 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-3 text-muted-foreground">
+          <i data-lucide="shopping-cart" class="size-8"></i>
+        </div>
+        <h4 class="font-heading font-bold text-sm text-foreground">Seu carrinho está vazio</h4>
+        <p class="text-xs text-muted-foreground mt-1 max-w-xs mx-auto">
+          Adicione peptídeos ou compostos do catálogo para iniciar seu pedido.
+        </p>
+        <button type="button" onclick="closeCartDrawer()" class="mt-4 px-4 py-2 rounded-xl bg-teal-600 text-white font-semibold text-xs hover:bg-teal-700 transition-colors">
+          Continuar Comprando
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart Footer Section -->
+    <div id="cart-footer-section" class="p-4 sm:p-5 border-t border-border bg-card/60 flex flex-col gap-3 hidden">
+      
+      <!-- Coupon & Shipping Row -->
+      <div class="space-y-2">
+        <!-- Coupon input -->
+        <div class="flex gap-1.5">
+          <input type="text" id="coupon-code-input" placeholder="Cupom (ex: COLEGIO10)" class="flex-1 h-9 px-3 text-xs rounded-xl border border-border bg-surface focus:outline-none focus:ring-1 focus:ring-teal-500 uppercase" />
+          <button type="button" id="apply-coupon-btn" class="h-9 px-3 rounded-xl bg-muted hover:bg-muted/80 text-xs font-semibold text-foreground">
+            Aplicar
+          </button>
+        </div>
+
+        <!-- Shipping calculator -->
+        <div class="flex gap-1.5">
+          <input type="text" id="shipping-cep-input" placeholder="Calcular Frete (CEP)" maxlength="9" class="flex-1 h-9 px-3 text-xs rounded-xl border border-border bg-surface focus:outline-none focus:ring-1 focus:ring-teal-500" />
+          <button type="button" id="calc-shipping-btn" class="h-9 px-3 rounded-xl bg-muted hover:bg-muted/80 text-xs font-semibold text-foreground">
+            Calcular
+          </button>
+        </div>
+      </div>
+
+      <!-- Price Totals -->
+      <div class="space-y-1.5 pt-2 border-t border-border/60 text-xs">
+        <div class="flex justify-between text-muted-foreground">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-val" class="font-semibold text-foreground">R$ 0,00</span>
+        </div>
+        <div id="cart-discount-row" class="flex justify-between text-emerald-600 dark:text-emerald-400 hidden">
+          <span>Desconto do Cupom</span>
+          <span id="cart-discount-val" class="font-semibold">- R$ 0,00</span>
+        </div>
+        <div class="flex justify-between text-muted-foreground">
+          <span>Frete Climatizado</span>
+          <span id="cart-shipping-val" class="font-semibold text-foreground">Calcular</span>
+        </div>
+        <div class="flex justify-between text-sm font-bold text-foreground pt-1 border-t border-border">
+          <span>Total Estimado</span>
+          <span id="cart-total-val" class="text-base text-teal-600 dark:text-teal-400 font-extrabold">R$ 0,00</span>
+        </div>
+      </div>
+
+      <!-- Checkout Button -->
+      <button type="button" id="proceed-checkout-btn" class="w-full py-3 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 active:scale-95 text-white font-bold text-sm shadow-lg shadow-teal-600/30 flex items-center justify-center gap-2 transition-all">
+        <i data-lucide="check" class="size-4"></i>
+        Finalizar Pedido
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ==================== PRODUCT DETAILS QUICK VIEW MODAL ==================== -->
+  <div id="product-modal-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <div id="product-details-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 pointer-events-none">
+    <div class="pointer-events-auto bg-surface border border-border rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative modal-content">
+      <button type="button" id="close-modal-btn" class="absolute top-4 right-4 p-2 rounded-full bg-muted/60 hover:bg-muted text-muted-foreground hover:text-foreground transition-colors z-20" title="Fechar">
+        <i data-lucide="x" class="size-5"></i>
+      </button>
+      <div id="product-modal-content"></div>
+    </div>
+  </div>
+
+
+
+  <!-- ==================== CHECKOUT SIMULATION MODAL ==================== -->
+  <div id="checkout-modal-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <div id="checkout-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 pointer-events-none">
+    <div class="pointer-events-auto bg-surface border border-border rounded-3xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto relative modal-content">
+      <div id="checkout-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATIONS CONTAINER ==================== -->
+  <div id="toast-container"></div>
+
+  <!-- Toast notifications and scripts -->
+
+  <!-- Products Database -->
+  <script src="products-data.js"></script>
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+
+</body>
+</html>
