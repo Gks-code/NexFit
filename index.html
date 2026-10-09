@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Aura BioPharma — Catálogo Científico de Peptídeos, Emagrecedores e Hormônios</title>
-  <meta name="description" content="Aura BioPharma: Catálogo acadêmico e técnico de peptídeos biomiméticos, moduladores metabólicos e formulações com laudos HPLC e envio seguro." />
+  <title>NEXFIT® — Performance Sem Limites | Emagrecimento, Hipertrofia & Peptídeos</title>
+  <meta name="description" content="NEXFIT®: Alta performance em modulação biológica. Emagrecimento (GLP-1), hipertrofia, peptídeos de alta pureza e compostos com envio climatizado para todo o Brasil." />
   
-  <!-- Favicon SVG -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%230d9488'/><path d='M30 65 L50 25 L70 65 Z' fill='none' stroke='white' stroke-width='8'/><circle cx='50' cy='48' r='7' fill='white'/></svg>" />
+  <!-- Favicon using Logo -->
+  <link rel="icon" type="image/png" href="nexfit-logo.png" />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,10 +24,11 @@
             foreground: 'var(--text-primary)',
             'muted-foreground': 'var(--text-muted)',
             secondary: 'var(--text-secondary)',
-            teal: {
-              500: '#14b8a6',
-              600: '#0d9488',
-              700: '#0f766e',
+            nex: {
+              DEFAULT: '#72e500',
+              glow: 'rgba(114, 229, 0, 0.35)',
+              bright: '#83ff05',
+              dark: '#58b300'
             }
           }
         }
@@ -41,27 +42,27 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="min-h-screen flex flex-col bg-background text-foreground antialiased selection:bg-teal-500 selection:text-white">
+<body class="min-h-screen flex flex-col bg-background text-foreground antialiased selection:bg-[#72e500] selection:text-black">
 
   <!-- ==================== TOP ANNOUNCEMENT BAR ==================== -->
-  <aside aria-label="Aviso de Frete e Segurança" class="bg-gradient-to-r from-teal-800 via-teal-900 to-slate-900 text-teal-100 text-xs py-2 px-4 shadow-sm relative z-50">
+  <aside aria-label="Aviso de Frete e Rastreio" class="bg-gradient-to-r from-black via-[#0d0d12] to-black border-b border-white/10 text-xs py-2 px-4 shadow-sm relative z-50">
     <div class="max-w-7xl mx-auto flex items-center justify-between text-[11px] sm:text-xs">
       <div class="flex items-center gap-2 overflow-hidden truncate">
-        <span class="inline-flex items-center gap-1.5 font-semibold text-emerald-300">
-          <i data-lucide="truck" class="size-3.5 shrink-0"></i>
-          Envio Climatizado para todo o Brasil
+        <span class="inline-flex items-center gap-1.5 font-bold text-[#72e500]">
+          <i data-lucide="zap" class="size-3.5 fill-[#72e500] shrink-0"></i>
+          NEXFIT® PERFORMANCE SEM LIMITES
         </span>
-        <span class="hidden sm:inline text-teal-300/40">|</span>
-        <span class="hidden sm:inline text-teal-200">Frete Grátis em pedidos acima de R$ 500</span>
+        <span class="hidden sm:inline text-white/20">|</span>
+        <span class="hidden sm:inline text-slate-300">🚚 Envio Climatizado p/ todo o Brasil · Frete Grátis acima de R$ 500</span>
       </div>
       
       <div class="flex items-center gap-4 shrink-0 font-medium">
-        <span class="hidden md:inline-flex items-center gap-1 text-teal-300">
-          <i data-lucide="shield-check" class="size-3.5 text-emerald-400"></i>
-          Laudos de Pureza HPLC
+        <span class="hidden md:inline-flex items-center gap-1 text-slate-300 font-semibold">
+          <i data-lucide="shield-check" class="size-3.5 text-[#72e500]"></i>
+          Pureza Analítica HPLC
         </span>
-        <a href="https://wa.me/5521967538035" target="_blank" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-teal-500/20 hover:bg-teal-500/30 text-teal-200 font-semibold border border-teal-500/30 transition-all text-[11px]">
-          <i data-lucide="message-circle" class="size-3.5 text-emerald-400"></i>
+        <a href="https://wa.me/5521967538035" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#72e500]/15 hover:bg-[#72e500]/25 text-[#72e500] font-bold border border-[#72e500]/30 transition-all text-[11px]">
+          <i data-lucide="message-circle" class="size-3.5 text-[#72e500]"></i>
           WhatsApp (21) 96753-8035
         </a>
       </div>
@@ -73,21 +74,19 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-6">
       
       <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-2.5 shrink-0 group">
-        <div class="size-10 sm:size-11 rounded-2xl bg-gradient-to-tr from-teal-600 via-teal-500 to-sky-500 flex items-center justify-center text-white shadow-md shadow-teal-500/20 group-hover:scale-105 transition-transform">
-          <i data-lucide="atom" class="size-6 stroke-[2.2]"></i>
+      <a href="#" class="flex items-center gap-3 shrink-0 group">
+        <div class="h-11 sm:h-12 w-11 sm:w-12 rounded-xl overflow-hidden bg-black flex items-center justify-center p-0.5 border border-[#72e500]/30 shadow-[0_0_15px_rgba(114,229,0,0.25)] group-hover:scale-105 transition-transform">
+          <img src="nexfit-logo.png" alt="NEXFIT Logo" class="h-full w-full object-cover rounded-lg" />
         </div>
         <div class="flex flex-col">
-          <div class="flex items-center gap-1.5">
-            <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-foreground">
-              AURA<span class="text-teal-600 dark:text-teal-400 font-black">.</span>BIO
+          <div class="flex items-center gap-1">
+            <span class="font-tech font-black text-xl sm:text-2xl tracking-wider text-white">
+              NEX<span class="text-[#72e500]">FIT</span>
             </span>
-            <span class="text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20">
-              Lab
-            </span>
+            <span class="text-[9px] font-bold font-tech text-[#72e500] -mt-2">®</span>
           </div>
-          <span class="text-[10px] text-muted-foreground font-medium -mt-0.5 hidden xs:block">
-            Biotecnologia & Bem-estar
+          <span class="text-[9px] text-slate-400 font-bold uppercase tracking-[0.2em] -mt-1 hidden xs:block">
+            Performance Sem Limites
           </span>
         </div>
       </a>
@@ -95,40 +94,40 @@
       <!-- Search Bar with Live Autocomplete -->
       <div class="relative flex-1 max-w-xl mx-2 sm:mx-4">
         <div class="relative flex items-center">
-          <i data-lucide="search" class="size-4 text-muted-foreground absolute left-3.5 pointer-events-none"></i>
+          <i data-lucide="search" class="size-4 text-slate-400 absolute left-3.5 pointer-events-none"></i>
           <input 
             type="search" 
             id="main-search-input"
             aria-label="Buscar substâncias, laboratórios ou apresentações" 
-            placeholder="Buscar por substância, lab ou dosagem (ex: Tirzepatida, BPC, Landerlan)..."
+            placeholder="Buscar composto, peptídeo ou lab (ex: Tirzepatida, BPC-157, Landerlan)..."
             autocomplete="off"
-            class="w-full h-10 sm:h-11 pl-10 pr-9 rounded-2xl border border-border bg-muted/40 hover:bg-muted/60 focus:bg-surface text-xs sm:text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-teal-500/40 focus:border-teal-500 transition-all shadow-inner"
+            class="w-full h-10 sm:h-11 pl-10 pr-9 rounded-xl border border-white/10 bg-[#16161d] hover:bg-[#1a1a23] focus:bg-[#16161d] text-xs sm:text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#72e500]/40 focus:border-[#72e500] transition-all shadow-inner"
           />
-          <button type="button" id="clear-search-btn" class="absolute right-3 text-muted-foreground hover:text-foreground hidden" title="Limpar busca">
+          <button type="button" id="clear-search-btn" class="absolute right-3 text-slate-400 hover:text-white hidden" title="Limpar busca">
             <i data-lucide="x" class="size-3.5"></i>
           </button>
         </div>
 
         <!-- Live Autocomplete Popover -->
-        <div id="search-autocomplete-dropdown" class="absolute left-0 right-0 top-full mt-1.5 bg-surface border border-border rounded-2xl shadow-2xl p-1.5 z-50 hidden"></div>
+        <div id="search-autocomplete-dropdown" class="absolute left-0 right-0 top-full mt-1.5 bg-[#16161d] border border-white/15 rounded-2xl shadow-2xl p-1.5 z-50 hidden"></div>
       </div>
 
       <!-- Action Buttons -->
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <!-- Theme Switcher -->
-        <button type="button" id="theme-toggle-btn" 
-          aria-label="Alternar tema claro/escuro" 
-          class="size-10 sm:size-11 rounded-2xl border border-border hover:bg-muted/60 flex items-center justify-center transition-colors text-foreground">
-          <i data-lucide="moon" class="size-5"></i>
-        </button>
+        <!-- WhatsApp Direct -->
+        <a href="https://wa.me/5521967538035" target="_blank" 
+          class="hidden md:flex items-center gap-1.5 px-3 py-2 rounded-xl border border-white/15 hover:border-[#72e500]/50 bg-white/5 text-xs font-bold text-slate-200 transition-colors">
+          <i data-lucide="headphones" class="size-4 text-[#72e500]"></i>
+          <span>Suporte</span>
+        </a>
 
         <!-- Cart Drawer Button -->
         <button type="button" id="cart-drawer-trigger" 
           aria-label="Abrir carrinho de compras" 
-          class="relative h-10 sm:h-11 px-3 sm:px-4 rounded-2xl bg-teal-600 hover:bg-teal-700 active:scale-95 text-white flex items-center gap-2 shadow-lg shadow-teal-600/25 transition-all">
-          <i data-lucide="shopping-bag" class="size-5"></i>
-          <span class="hidden sm:inline font-semibold text-xs">Pedido</span>
-          <span class="cart-count-badge hidden size-5 rounded-full bg-white text-teal-700 font-extrabold text-[11px] flex items-center justify-center shadow-sm">
+          class="relative h-10 sm:h-11 px-3.5 sm:px-4 rounded-xl btn-nex-primary flex items-center gap-2 transition-all">
+          <i data-lucide="shopping-bag" class="size-5 text-black"></i>
+          <span class="hidden sm:inline font-black text-xs text-black">Pedido</span>
+          <span class="cart-count-badge hidden size-5 rounded-full bg-black text-[#72e500] font-black text-[11px] flex items-center justify-center shadow-md">
             0
           </span>
         </button>
@@ -137,77 +136,75 @@
   </header>
 
   <!-- ==================== HERO PRESENTATION BANNER ==================== -->
-  <section class="relative overflow-hidden border-b border-border py-10 sm:py-16 hero-glow">
+  <section class="relative overflow-hidden border-b border-white/10 py-10 sm:py-14 hero-glow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-      <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
+      <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
         
-        <!-- Academic Pill Badge -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-700 dark:text-teal-300 text-xs font-semibold mb-4 animate-pulse">
-          <i data-lucide="sparkles" class="size-3.5 text-teal-500"></i>
-          Catálogo Farmacológico & Biotecnológico 2026
+        <!-- 3D Logo Image Showcase -->
+        <div class="relative mb-5 group">
+          <div class="absolute inset-0 bg-[#72e500]/20 rounded-full blur-3xl -z-10 group-hover:bg-[#72e500]/30 transition-all"></div>
+          <img src="nexfit-logo.png" alt="NEXFIT 3D Logo" class="h-28 sm:h-36 md:h-44 w-auto object-contain mx-auto drop-shadow-[0_0_35px_rgba(114,229,0,0.45)]" />
         </div>
 
-        <h1 class="font-heading font-extrabold text-2xl sm:text-4xl md:text-5xl text-foreground tracking-tight leading-tight">
-          Inovação Molecular, Peptídeos & <span class="bg-gradient-to-r from-teal-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">Alta Precisão</span>
+        <!-- Brand Name & Slogan -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#72e500]/10 border border-[#72e500]/30 text-[#72e500] text-xs font-bold mb-3 font-tech tracking-wider">
+          <i data-lucide="sparkles" class="size-3.5 text-[#72e500]"></i>
+          CATÁLOGO OFICIAL 2026
+        </div>
+
+        <h1 class="font-tech font-black text-3xl sm:text-5xl md:text-6xl text-white tracking-wider leading-tight">
+          NEX<span class="text-[#72e500]">FIT</span><span class="text-xs text-[#72e500] align-super">®</span>
         </h1>
 
-        <p class="mt-4 text-sm sm:text-base text-secondary max-w-2xl leading-relaxed">
-          Explore o portfólio completo com mais de 110 itens catalogados entre agonistas metabólicos (GLP-1), peptídeos biomiméticos e formulações especializadas com procedência garantida.
+        <p class="font-tech font-black text-sm sm:text-base md:text-lg tracking-[0.25em] text-[#72e500] mt-1 uppercase">
+          PERFORMANCE SEM LIMITES
         </p>
 
-        <!-- Quick CTAs -->
+        <p class="text-xs sm:text-sm font-semibold tracking-widest text-slate-400 mt-1 uppercase">
+          SAÚDE &nbsp;|&nbsp; ESTÉTICA &nbsp;|&nbsp; RESULTADOS
+        </p>
+
+        <p class="mt-4 text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+          Portfólio de alta precisão farmacológica: emagrecedores metabólicos (GLP-1), peptídeos puros certificados HPLC e formulações especializadas para máximo rendimento e estética.
+        </p>
+
+        <!-- Quick CTA Buttons -->
         <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <a href="#catalogo" class="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-semibold text-xs sm:text-sm shadow-md shadow-teal-600/30 flex items-center gap-2 transition-all">
+          <a href="#catalogo" class="px-6 py-3 rounded-xl btn-nex-primary text-black font-extrabold text-xs sm:text-sm flex items-center gap-2">
             <i data-lucide="layout-grid" class="size-4"></i>
             Explorar Catálogo Completo
           </a>
-          <a href="https://wa.me/5521967538035" target="_blank" class="px-5 py-2.5 rounded-xl border border-border bg-surface hover:bg-muted font-semibold text-xs sm:text-sm text-foreground flex items-center gap-2 transition-all">
-            <i data-lucide="message-circle" class="size-4 text-emerald-500"></i>
-            Suporte Farmacêutico
+          <a href="https://wa.me/5521967538035" target="_blank" class="px-5 py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 font-bold text-xs sm:text-sm text-white flex items-center gap-2 transition-all">
+            <i data-lucide="message-circle" class="size-4 text-[#72e500]"></i>
+            WhatsApp (21) 96753-8035
           </a>
         </div>
 
-        <!-- 4 Trust Badges -->
-        <div class="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 w-full text-left">
+        <!-- 4 Core Pillars matching the uploaded logo -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full mt-10">
           
-          <div class="p-3.5 rounded-2xl border border-border/80 bg-surface/80 backdrop-blur-sm shadow-sm flex items-start gap-3">
-            <div class="size-9 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0">
-              <i data-lucide="microscope" class="size-5"></i>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-foreground">Pureza Analítica</h4>
-              <p class="text-[11px] text-muted-foreground mt-0.5">Laudos HPLC & Espectrometria</p>
-            </div>
+          <div class="pillar-card p-4 rounded-2xl flex flex-col items-center text-center cursor-pointer group" onclick="filterByPillar('emagrecedores')">
+            <span class="text-3xl mb-1 group-hover:scale-110 transition-transform">🔥</span>
+            <span class="font-tech font-bold text-xs uppercase tracking-wider text-white group-hover:text-[#72e500] transition-colors">EMAGRECIMENTO</span>
+            <span class="text-[10px] text-slate-400 mt-0.5">GLP-1 & Queima</span>
           </div>
 
-          <div class="p-3.5 rounded-2xl border border-border/80 bg-surface/80 backdrop-blur-sm shadow-sm flex items-start gap-3">
-            <div class="size-9 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0">
-              <i data-lucide="snowflake" class="size-5"></i>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-foreground">Cadeia de Frio</h4>
-              <p class="text-[11px] text-muted-foreground mt-0.5">Embalagem térmica com gelo seco</p>
-            </div>
+          <div class="pillar-card p-4 rounded-2xl flex flex-col items-center text-center cursor-pointer group" onclick="filterByPillar('hormonios')">
+            <span class="text-3xl mb-1 group-hover:scale-110 transition-transform">💪</span>
+            <span class="font-tech font-bold text-xs uppercase tracking-wider text-white group-hover:text-[#72e500] transition-colors">HIPERTROFIA</span>
+            <span class="text-[10px] text-slate-400 mt-0.5">Massa & Força</span>
           </div>
 
-          <div class="p-3.5 rounded-2xl border border-border/80 bg-surface/80 backdrop-blur-sm shadow-sm flex items-start gap-3">
-            <div class="size-9 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
-              <i data-lucide="shield-check" class="size-5"></i>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-foreground">Envio Discreto</h4>
-              <p class="text-[11px] text-muted-foreground mt-0.5">Rastreamento Sedex em tempo real</p>
-            </div>
+          <div class="pillar-card p-4 rounded-2xl flex flex-col items-center text-center cursor-pointer group" onclick="filterByPillar('peptideos')">
+            <span class="text-3xl mb-1 group-hover:scale-110 transition-transform">⬡</span>
+            <span class="font-tech font-bold text-xs uppercase tracking-wider text-white group-hover:text-[#72e500] transition-colors">PEPTÍDEOS</span>
+            <span class="text-[10px] text-slate-400 mt-0.5">Pureza HPLC</span>
           </div>
 
-          <div class="p-3.5 rounded-2xl border border-border/80 bg-surface/80 backdrop-blur-sm shadow-sm flex items-start gap-3">
-            <div class="size-9 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-              <i data-lucide="headphones" class="size-5"></i>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-foreground">Suporte Técnico</h4>
-              <p class="text-[11px] text-muted-foreground mt-0.5">Orientação técnica especializada</p>
-            </div>
+          <div class="pillar-card p-4 rounded-2xl flex flex-col items-center text-center cursor-pointer group" onclick="filterByPillar('all')">
+            <span class="text-3xl mb-1 group-hover:scale-110 transition-transform">🧬</span>
+            <span class="font-tech font-bold text-xs uppercase tracking-wider text-white group-hover:text-[#72e500] transition-colors">PERFORMANCE</span>
+            <span class="text-[10px] text-slate-400 mt-0.5">Sem Limites</span>
           </div>
 
         </div>
@@ -222,39 +219,39 @@
     <!-- Category Tabs Navigation -->
     <div class="flex flex-col gap-3">
       <div class="flex items-center justify-between">
-        <h2 class="font-heading font-extrabold text-xl sm:text-2xl text-foreground">
+        <h2 class="font-tech font-bold text-xl sm:text-2xl text-white tracking-wide">
           Linhas Farmacológicas
         </h2>
-        <span id="results-counter" class="text-xs text-muted-foreground font-medium">
+        <span id="results-counter" class="text-xs text-slate-400 font-medium">
           Carregando catálogo...
         </span>
       </div>
 
       <!-- Main Category Pills -->
       <nav aria-label="Filtro de Categorias" class="overflow-x-auto pb-1 scrollbar-none">
-        <div class="inline-flex items-center gap-2 p-1.5 rounded-2xl border border-border bg-card/60">
-          <button type="button" class="filter-tab active px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 whitespace-nowrap" data-category="all">
+        <div class="inline-flex items-center gap-2 p-1.5 rounded-2xl border border-white/10 bg-[#14141a]">
+          <button type="button" class="filter-tab active px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 whitespace-nowrap" data-category="all">
             <i data-lucide="layers" class="size-3.5"></i>
             Todos os Produtos
-            <span id="count-all" class="opacity-75 text-[10px] font-mono">(0)</span>
+            <span id="count-all" class="opacity-80 text-[10px] font-mono">(0)</span>
           </button>
           
-          <button type="button" class="filter-tab px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 text-muted-foreground hover:text-foreground whitespace-nowrap" data-category="emagrecedores">
-            <i data-lucide="flame" class="size-3.5 text-amber-500"></i>
-            Emagrecedores & GLP-1
-            <span id="count-emagrecedores" class="opacity-75 text-[10px] font-mono">(0)</span>
+          <button type="button" class="filter-tab px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 text-slate-400 hover:text-white whitespace-nowrap" data-category="emagrecedores">
+            <span>🔥</span>
+            Emagrecimento (GLP-1)
+            <span id="count-emagrecedores" class="opacity-80 text-[10px] font-mono">(0)</span>
           </button>
 
-          <button type="button" class="filter-tab px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 text-muted-foreground hover:text-foreground whitespace-nowrap" data-category="peptideos">
-            <i data-lucide="dna" class="size-3.5 text-sky-500"></i>
-            Peptídeos de Precisão
-            <span id="count-peptideos" class="opacity-75 text-[10px] font-mono">(0)</span>
+          <button type="button" class="filter-tab px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 text-slate-400 hover:text-white whitespace-nowrap" data-category="peptideos">
+            <span>⬡</span>
+            Peptídeos HPLC
+            <span id="count-peptideos" class="opacity-80 text-[10px] font-mono">(0)</span>
           </button>
 
-          <button type="button" class="filter-tab px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 text-muted-foreground hover:text-foreground whitespace-nowrap" data-category="hormonios">
-            <i data-lucide="activity" class="size-3.5 text-purple-500"></i>
-            Hormônios & Compostos
-            <span id="count-hormonios" class="opacity-75 text-[10px] font-mono">(0)</span>
+          <button type="button" class="filter-tab px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2 text-slate-400 hover:text-white whitespace-nowrap" data-category="hormonios">
+            <span>💪</span>
+            Hipertrofia & Força
+            <span id="count-hormonios" class="opacity-80 text-[10px] font-mono">(0)</span>
           </button>
         </div>
       </nav>
@@ -266,13 +263,13 @@
     </div>
 
     <!-- Controls Bar: Sort, View Mode & Filters -->
-    <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-border">
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-white/10">
       
       <!-- Left: Only promotions toggle -->
       <div class="flex items-center gap-3">
         <label class="inline-flex items-center gap-2 cursor-pointer select-none">
-          <input type="checkbox" id="promo-only-filter" class="rounded border-border text-teal-600 focus:ring-teal-500 size-4" />
-          <span class="text-xs font-semibold text-foreground flex items-center gap-1">
+          <input type="checkbox" id="promo-only-filter" class="rounded border-white/20 bg-black text-[#72e500] focus:ring-[#72e500] size-4" />
+          <span class="text-xs font-bold text-white flex items-center gap-1">
             <i data-lucide="tag" class="size-3.5 text-rose-500"></i>
             Apenas em Promoção
           </span>
@@ -282,9 +279,9 @@
       <!-- Right: Sort Dropdown & Grid/List View Mode -->
       <div class="flex items-center gap-3">
         <!-- Sort Select -->
-        <div class="flex items-center gap-1.5 text-xs text-muted-foreground">
-          <label for="sort-select" class="hidden sm:inline">Ordenar:</label>
-          <select id="sort-select" class="h-9 rounded-xl border border-border bg-surface px-2.5 text-xs font-semibold text-foreground focus:outline-none focus:ring-2 focus:ring-teal-500/40">
+        <div class="flex items-center gap-1.5 text-xs text-slate-400">
+          <label for="sort-select" class="hidden sm:inline font-semibold">Ordenar:</label>
+          <select id="sort-select" class="h-9 rounded-xl border border-white/15 bg-[#15151c] px-3 text-xs font-bold text-white focus:outline-none focus:ring-2 focus:ring-[#72e500]/40">
             <option value="relevancia">Relevância</option>
             <option value="menor-preco">Menor Preço</option>
             <option value="maior-preco">Maior Preço</option>
@@ -294,11 +291,11 @@
         </div>
 
         <!-- View Mode Switch -->
-        <div class="flex items-center border border-border rounded-xl p-0.5 bg-surface">
-          <button type="button" id="btn-view-grid" aria-label="Visualização em Grade" class="size-8 rounded-lg flex items-center justify-center bg-muted text-foreground transition-colors" title="Grade">
+        <div class="flex items-center border border-white/15 rounded-xl p-0.5 bg-[#15151c]">
+          <button type="button" id="btn-view-grid" aria-label="Visualização em Grade" class="size-8 rounded-lg flex items-center justify-center bg-[#72e500] text-black transition-colors" title="Grade">
             <i data-lucide="layout-grid" class="size-4"></i>
           </button>
-          <button type="button" id="btn-view-list" aria-label="Visualização em Lista" class="size-8 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors" title="Lista">
+          <button type="button" id="btn-view-list" aria-label="Visualização em Lista" class="size-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white transition-colors" title="Lista">
             <i data-lucide="list" class="size-4"></i>
           </button>
         </div>
@@ -312,91 +309,91 @@
     </div>
 
     <!-- Empty State -->
-    <div id="empty-state" class="hidden text-center py-16 px-4 border border-dashed border-border rounded-3xl bg-muted/20">
-      <div class="size-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-3 text-muted-foreground">
+    <div id="empty-state" class="hidden text-center py-16 px-4 border border-dashed border-white/15 rounded-3xl bg-white/5">
+      <div class="size-16 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-3 text-slate-400">
         <i data-lucide="package-search" class="size-8"></i>
       </div>
-      <h3 class="font-heading font-bold text-lg text-foreground">Nenhum produto encontrado</h3>
-      <p class="text-xs text-muted-foreground mt-1 max-w-sm mx-auto">
+      <h3 class="font-tech font-bold text-lg text-white">Nenhum produto encontrado</h3>
+      <p class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">
         Tente ajustar sua busca, remover os filtros aplicados ou escolher outra categoria.
       </p>
       <button type="button" 
         onclick="document.getElementById('main-search-input').value = ''; state.searchQuery = ''; state.activeBrand = 'all'; state.onlyPromotions = false; initBrandsList(); renderProducts();"
-        class="mt-4 px-4 py-2 rounded-xl bg-teal-600 text-white font-semibold text-xs hover:bg-teal-700 transition-colors">
+        class="mt-4 px-5 py-2.5 rounded-xl btn-nex-primary text-black font-extrabold text-xs transition-colors">
         Limpar Filtros de Busca
       </button>
     </div>
 
     <!-- Load More Container -->
     <div id="load-more-container" class="flex justify-center pt-4 pb-6 hidden">
-      <button type="button" id="load-more-btn" class="px-6 py-3 rounded-2xl border border-border bg-surface hover:bg-muted font-bold text-xs sm:text-sm text-foreground shadow-sm transition-all flex items-center gap-2">
-        <i data-lucide="chevron-down" class="size-4 text-teal-600"></i>
+      <button type="button" id="load-more-btn" class="px-6 py-3 rounded-2xl border border-white/15 bg-[#15151c] hover:border-[#72e500]/50 font-bold text-xs sm:text-sm text-white shadow-sm transition-all flex items-center gap-2">
+        <i data-lucide="chevron-down" class="size-4 text-[#72e500]"></i>
         Carregar mais produtos
       </button>
     </div>
 
-    <!-- ==================== EDUCATIONAL FAQ ACCORDION ==================== -->
-    <section class="mt-12 pt-10 border-t border-border">
+    <!-- ==================== FAQ ACCORDION ==================== -->
+    <section class="mt-12 pt-10 border-t border-white/10">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-8">
-          <span class="text-xs font-bold text-teal-600 dark:text-teal-400 uppercase tracking-widest bg-teal-500/10 px-3 py-1 rounded-full">
-            Seção de Aprendizado & Pesquisa
+          <span class="text-xs font-bold text-[#72e500] uppercase tracking-widest bg-[#72e500]/10 border border-[#72e500]/30 px-3 py-1 rounded-full">
+            Dúvidas Frequentes
           </span>
-          <h2 class="font-heading font-extrabold text-2xl text-foreground mt-3">
-            Perguntas Frequentes & Fundamentos Científicos
+          <h2 class="font-tech font-bold text-2xl text-white mt-3">
+            Garantia, Segurança & Logística
           </h2>
-          <p class="text-xs text-muted-foreground mt-1">
-            Informações acadêmicas sobre o mecanismo de ação dos compostos e a logística farmacêutica
+          <p class="text-xs text-slate-400 mt-1">
+            Informações sobre pureza cromatográfica e processo de entrega climatizada
           </p>
         </div>
 
         <div class="space-y-3">
           
-          <details class="group border border-border rounded-2xl p-4 bg-card/60 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-foreground">
+          <details class="group border border-white/10 rounded-2xl p-4 bg-[#14141a] [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-white">
               <span>Como funcionam os peptídeos agonistas de GLP-1 e GIP no organismo?</span>
-              <span class="transition-transform group-open:rotate-180 text-muted-foreground">
+              <span class="transition-transform group-open:rotate-180 text-slate-400">
                 <i data-lucide="chevron-down" class="size-4"></i>
               </span>
             </summary>
-            <p class="mt-3 text-xs text-secondary leading-relaxed pl-1 border-l-2 border-teal-500">
+            <p class="mt-3 text-xs text-slate-300 leading-relaxed pl-2 border-l-2 border-[#72e500]">
               Agonistas de receptores GLP-1 (como Semaglutida e Tirzepatida) imitam os hormônios incretínicos naturais liberados pelo intestino delgado após as refeições. Eles retardam o esvaziamento gástrico, aumentam a secreção de insulina dependente de glicose no pâncreas e agem no hipotálamo reduzindo o apetite e aumentando a saciedade.
             </p>
           </details>
 
-          <details class="group border border-border rounded-2xl p-4 bg-card/60 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-foreground">
+          <details class="group border border-white/10 rounded-2xl p-4 bg-[#14141a] [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-white">
               <span>Por que a conservação sob refrigeração (cadeia de frio) é indispensável?</span>
-              <span class="transition-transform group-open:rotate-180 text-muted-foreground">
+              <span class="transition-transform group-open:rotate-180 text-slate-400">
                 <i data-lucide="chevron-down" class="size-4"></i>
               </span>
             </summary>
-            <p class="mt-3 text-xs text-secondary leading-relaxed pl-1 border-l-2 border-teal-500">
-              Proteínas e cadeias peptídicas possuem estrutura tridimensional sensível à temperatura (desnaturação térmica). Em temperaturas elevadas, ocorrem quebras nas pontes de hidrogênio e oxidação das cadeias laterais dos aminoácidos, inativando a substância. Por isso, utilizam-se caixas isotérmicas e agentes refrigerantes específicos.
+            <p class="mt-3 text-xs text-slate-300 leading-relaxed pl-2 border-l-2 border-[#72e500]">
+              Proteínas e cadeias peptídicas possuem estrutura tridimensional sensível à temperatura (desnaturação térmica). Por isso, nossos pedidos são enviados em caixas isotérmicas vedadas com agentes refrigerantes para manter a estabilidade térmica intacta de 2°C a 8°C durante o trajeto.
             </p>
           </details>
 
-          <details class="group border border-border rounded-2xl p-4 bg-card/60 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-foreground">
-              <span>O que é análise HPLC de pureza citada nos laudos laboratoriais?</span>
-              <span class="transition-transform group-open:rotate-180 text-muted-foreground">
+          <details class="group border border-white/10 rounded-2xl p-4 bg-[#14141a] [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-white">
+              <span>O que significa a pureza cromatográfica (HPLC) nos compostos?</span>
+              <span class="transition-transform group-open:rotate-180 text-slate-400">
                 <i data-lucide="chevron-down" class="size-4"></i>
               </span>
             </summary>
-            <p class="mt-3 text-xs text-secondary leading-relaxed pl-1 border-l-2 border-teal-500">
-              HPLC (High-Performance Liquid Chromatography ou Cromatografia Líquida de Alta Eficiência) é o padrão-ouro na indústria química para separar, identificar e quantificar cada componente de uma mistura, assegurando que o produto contenha mais de 98-99% do princípio ativo declarado, sem contaminantes residuais.
+            <p class="mt-3 text-xs text-slate-300 leading-relaxed pl-2 border-l-2 border-[#72e500]">
+              HPLC (High-Performance Liquid Chromatography) é a metodologia laboratorial mais avançada do mundo para confirmar a concentração exata de cada miligrama e certificar pureza superior a 99%, livre de contaminantes residuais.
             </p>
           </details>
 
-          <details class="group border border-border rounded-2xl p-4 bg-card/60 [&_summary::-webkit-details-marker]:hidden">
-            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-foreground">
-              <span>Como é garantida a segurança e sigilo no envio dos pedidos?</span>
-              <span class="transition-transform group-open:rotate-180 text-muted-foreground">
+          <details class="group border border-white/10 rounded-2xl p-4 bg-[#14141a] [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-heading font-bold text-sm text-white">
+              <span>Como é garantida a segurança e discrição na entrega?</span>
+              <span class="transition-transform group-open:rotate-180 text-slate-400">
                 <i data-lucide="chevron-down" class="size-4"></i>
               </span>
             </summary>
-            <p class="mt-3 text-xs text-secondary leading-relaxed pl-1 border-l-2 border-teal-500">
-              Todos os envios são realizados com embalagem externa 100% discreta e inviolável, sem qualquer menção externa ao conteúdo, contando com código de rastreamento direto dos Correios (Sedex Express) e seguro total contra extravios.
+            <p class="mt-3 text-xs text-slate-300 leading-relaxed pl-2 border-l-2 border-[#72e500]">
+              Todos os envios são realizados com embalagem externa 100% neutra, discreta e inviolável, sem qualquer indicação externa do conteúdo, contando com código de rastreamento Sedex Express em tempo real e seguro de ponta a ponta.
             </p>
           </details>
 
@@ -407,28 +404,28 @@
   </main>
 
   <!-- ==================== FOOTER ==================== -->
-  <footer class="mt-16 border-t border-border bg-card/70 py-12 px-4 sm:px-6">
+  <footer class="mt-16 border-t border-white/10 bg-[#0c0c10] py-12 px-4 sm:px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
       
       <!-- Brand Info -->
       <div class="md:col-span-2">
-        <div class="flex items-center gap-2 mb-3">
-          <div class="size-8 rounded-xl bg-teal-600 flex items-center justify-center text-white">
-            <i data-lucide="atom" class="size-5"></i>
+        <div class="flex items-center gap-3 mb-3">
+          <div class="h-10 w-10 rounded-xl overflow-hidden bg-black flex items-center justify-center p-0.5 border border-[#72e500]/40">
+            <img src="nexfit-logo.png" alt="NEXFIT Logo" class="h-full w-full object-cover rounded-lg" />
           </div>
-          <span class="font-heading font-black text-lg text-foreground">AURA BIOPHARMA</span>
+          <span class="font-tech font-black text-xl text-white">NEX<span class="text-[#72e500]">FIT</span>®</span>
         </div>
-        <p class="text-xs text-muted-foreground max-w-md leading-relaxed">
-          Catálogo acadêmico e técnico especializado em biologia celular, endocrinologia e sinalização de peptídeos. Plataforma desenvolvida com excelência para fins educacionais e de demonstração prática de e-commerce farmacêutico.
+        <p class="text-xs text-slate-400 max-w-md leading-relaxed">
+          Plataforma de alta precisão biológica e performance física. Compostos certificados, cadeia de frio garantida e atendimento direto com suporte técnico especializado.
         </p>
         
-        <div class="mt-4 flex items-center gap-3">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-semibold">
+        <div class="mt-4 flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#72e500]/10 border border-[#72e500]/30 text-[#72e500] text-[11px] font-bold">
             <i data-lucide="shield-check" class="size-3.5"></i>
             Ambiente Seguro SSL 256-bit
           </span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-[11px] font-semibold">
-            <i data-lucide="box" class="size-3.5"></i>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[11px] font-bold">
+            <i data-lucide="snowflake" class="size-3.5 text-[#72e500]"></i>
             100% Climatizado
           </span>
         </div>
@@ -436,27 +433,27 @@
 
       <!-- Institutional Links -->
       <div>
-        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-foreground mb-3">
-          Institucional
+        <h4 class="font-tech font-bold text-xs uppercase tracking-wider text-white mb-3">
+          Categorias
         </h4>
-        <ul class="space-y-2 text-xs text-muted-foreground">
-          <li><a href="#catalogo" class="hover:text-foreground transition-colors">Linhas de Produtos</a></li>
-          <li><a href="#catalogo" class="hover:text-foreground transition-colors">Catálogo de Produtos</a></li>
-          <li><a href="#" onclick="showToast('Horário: Seg a Sex das 09h às 20h', 'info'); return false;" class="hover:text-foreground transition-colors">Horário de Atendimento</a></li>
-          <li><a href="https://wa.me/5521967538035" target="_blank" class="hover:text-foreground transition-colors">Canal de Suporte WhatsApp</a></li>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li><a href="#catalogo" onclick="filterByPillar('emagrecedores')" class="hover:text-[#72e500] transition-colors">Emagrecimento (GLP-1)</a></li>
+          <li><a href="#catalogo" onclick="filterByPillar('peptideos')" class="hover:text-[#72e500] transition-colors">Peptídeos de Precisão</a></li>
+          <li><a href="#catalogo" onclick="filterByPillar('hormonios')" class="hover:text-[#72e500] transition-colors">Hipertrofia & Força</a></li>
+          <li><a href="https://wa.me/5521967538035" target="_blank" class="hover:text-[#72e500] transition-colors">Suporte WhatsApp: (21) 96753-8035</a></li>
         </ul>
       </div>
 
-      <!-- Institutional Guarantee & Terms -->
+      <!-- Guarantee -->
       <div>
-        <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-foreground mb-3">
-          Garantia de Qualidade
+        <h4 class="font-tech font-bold text-xs uppercase tracking-wider text-white mb-3">
+          Garantia de Procedência
         </h4>
-        <p class="text-xs text-muted-foreground leading-relaxed">
-          Compostos certificados com alto grau de pureza por ensaios cromatográficos (HPLC). Distribuição com controle térmico rigoroso e atendimento humano personalizado do pedido à entrega.
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Formulações com laudos HPLC de pureza superior a 99%. Atendimento direto via WhatsApp do primeiro contato ao pós-venda.
         </p>
-        <p class="text-[11px] text-teal-600 dark:text-teal-400 font-semibold mt-2">
-          © 2026 Aura BioPharma. Todos os direitos reservados.
+        <p class="text-[11px] text-[#72e500] font-bold mt-2 font-tech">
+          © 2026 NEXFIT®. Todos os direitos reservados.
         </p>
       </div>
 
@@ -464,30 +461,30 @@
   </footer>
 
   <!-- ==================== CART SLIDE-OVER DRAWER ==================== -->
-  <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <div id="cart-overlay" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 hidden transition-opacity"></div>
   
-  <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full sm:w-[440px] bg-surface border-l border-border shadow-2xl z-50 flex flex-col translate-x-full drawer-right">
+  <div id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full sm:w-[440px] bg-[#111116] border-l border-white/15 shadow-2xl z-50 flex flex-col translate-x-full drawer-right text-white">
     
     <!-- Drawer Header -->
-    <div class="p-4 sm:p-5 border-b border-border flex items-center justify-between">
+    <div class="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between">
       <div class="flex items-center gap-2">
-        <i data-lucide="shopping-bag" class="size-5 text-teal-600"></i>
-        <h3 class="font-heading font-bold text-base text-foreground">Seu Carrinho</h3>
-        <span class="cart-count-badge hidden text-xs font-bold px-2 py-0.5 rounded-full bg-teal-500/10 text-teal-600">0 itens</span>
+        <i data-lucide="shopping-bag" class="size-5 text-[#72e500]"></i>
+        <h3 class="font-tech font-bold text-base text-white">Seu Pedido NEXFIT</h3>
+        <span class="cart-count-badge hidden text-xs font-bold px-2 py-0.5 rounded-full bg-[#72e500]/15 text-[#72e500]">0 itens</span>
       </div>
-      <button type="button" id="close-cart-btn" class="p-1.5 text-muted-foreground hover:text-foreground rounded-lg transition-colors" title="Fechar carrinho">
+      <button type="button" id="close-cart-btn" class="p-1.5 text-slate-400 hover:text-white rounded-lg transition-colors" title="Fechar carrinho">
         <i data-lucide="x" class="size-5"></i>
       </button>
     </div>
 
     <!-- Free Shipping Progress -->
-    <div class="p-3 bg-muted/40 border-b border-border text-xs">
+    <div class="p-3 bg-black/40 border-b border-white/10 text-xs">
       <div class="flex justify-between items-center mb-1 text-[11px]">
-        <span id="free-shipping-text" class="text-muted-foreground">Faltam R$ 500,00 para Frete Grátis</span>
-        <span class="font-bold text-teal-600">Meta: R$ 500</span>
+        <span id="free-shipping-text" class="text-slate-300">Faltam R$ 500,00 para Frete Grátis</span>
+        <span class="font-bold text-[#72e500]">Meta: R$ 500</span>
       </div>
-      <div class="w-full bg-border rounded-full h-1.5 overflow-hidden">
-        <div id="free-shipping-progress" class="bg-teal-500 h-full w-0 transition-all duration-300"></div>
+      <div class="w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+        <div id="free-shipping-progress" class="bg-[#72e500] h-full w-0 transition-all duration-300"></div>
       </div>
     </div>
 
@@ -497,65 +494,65 @@
 
       <!-- Empty State inside cart -->
       <div id="cart-empty-state" class="text-center py-16 px-4">
-        <div class="size-16 rounded-full bg-muted/60 flex items-center justify-center mx-auto mb-3 text-muted-foreground">
+        <div class="size-16 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-3 text-slate-400">
           <i data-lucide="shopping-cart" class="size-8"></i>
         </div>
-        <h4 class="font-heading font-bold text-sm text-foreground">Seu carrinho está vazio</h4>
-        <p class="text-xs text-muted-foreground mt-1 max-w-xs mx-auto">
-          Adicione peptídeos ou compostos do catálogo para iniciar seu pedido.
+        <h4 class="font-tech font-bold text-sm text-white">Seu carrinho está vazio</h4>
+        <p class="text-xs text-slate-400 mt-1 max-w-xs mx-auto">
+          Adicione itens do catálogo NEXFIT para iniciar seu pedido.
         </p>
-        <button type="button" onclick="closeCartDrawer()" class="mt-4 px-4 py-2 rounded-xl bg-teal-600 text-white font-semibold text-xs hover:bg-teal-700 transition-colors">
-          Continuar Comprando
+        <button type="button" onclick="closeCartDrawer()" class="mt-4 px-5 py-2.5 rounded-xl btn-nex-primary text-black font-extrabold text-xs transition-colors">
+          Explorar Catálogo
         </button>
       </div>
     </div>
 
     <!-- Cart Footer Section -->
-    <div id="cart-footer-section" class="p-4 sm:p-5 border-t border-border bg-card/60 flex flex-col gap-3 hidden">
+    <div id="cart-footer-section" class="p-4 sm:p-5 border-t border-white/10 bg-[#16161d] flex flex-col gap-3 hidden">
       
       <!-- Coupon & Shipping Row -->
       <div class="space-y-2">
         <!-- Coupon input -->
         <div class="flex gap-1.5">
-          <input type="text" id="coupon-code-input" placeholder="Cupom (ex: COLEGIO10)" class="flex-1 h-9 px-3 text-xs rounded-xl border border-border bg-surface focus:outline-none focus:ring-1 focus:ring-teal-500 uppercase" />
-          <button type="button" id="apply-coupon-btn" class="h-9 px-3 rounded-xl bg-muted hover:bg-muted/80 text-xs font-semibold text-foreground">
+          <input type="text" id="coupon-code-input" placeholder="Cupom (ex: NEXFIT10)" class="flex-1 h-9 px-3 text-xs rounded-xl border border-white/15 bg-black/60 focus:outline-none focus:ring-1 focus:ring-[#72e500] uppercase text-white placeholder:text-slate-500" />
+          <button type="button" id="apply-coupon-btn" class="h-9 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition-colors">
             Aplicar
           </button>
         </div>
 
         <!-- Shipping calculator -->
         <div class="flex gap-1.5">
-          <input type="text" id="shipping-cep-input" placeholder="Calcular Frete (CEP)" maxlength="9" class="flex-1 h-9 px-3 text-xs rounded-xl border border-border bg-surface focus:outline-none focus:ring-1 focus:ring-teal-500" />
-          <button type="button" id="calc-shipping-btn" class="h-9 px-3 rounded-xl bg-muted hover:bg-muted/80 text-xs font-semibold text-foreground">
+          <input type="text" id="shipping-cep-input" placeholder="Calcular Frete (CEP)" maxlength="9" class="flex-1 h-9 px-3 text-xs rounded-xl border border-white/15 bg-black/60 focus:outline-none focus:ring-1 focus:ring-[#72e500] text-white placeholder:text-slate-500" />
+          <button type="button" id="calc-shipping-btn" class="h-9 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition-colors">
             Calcular
           </button>
         </div>
       </div>
 
       <!-- Price Totals -->
-      <div class="space-y-1.5 pt-2 border-t border-border/60 text-xs">
-        <div class="flex justify-between text-muted-foreground">
+      <div class="space-y-1.5 pt-2 border-t border-white/10 text-xs">
+        <div class="flex justify-between text-slate-400">
           <span>Subtotal</span>
-          <span id="cart-subtotal-val" class="font-semibold text-foreground">R$ 0,00</span>
+          <span id="cart-subtotal-val" class="font-bold text-white">R$ 0,00</span>
         </div>
-        <div id="cart-discount-row" class="flex justify-between text-emerald-600 dark:text-emerald-400 hidden">
-          <span>Desconto do Cupom</span>
-          <span id="cart-discount-val" class="font-semibold">- R$ 0,00</span>
+        <div id="cart-discount-row" class="flex justify-between text-[#72e500] hidden">
+          <span>Desconto</span>
+          <span id="cart-discount-val" class="font-bold">- R$ 0,00</span>
         </div>
-        <div class="flex justify-between text-muted-foreground">
+        <div class="flex justify-between text-slate-400">
           <span>Frete Climatizado</span>
-          <span id="cart-shipping-val" class="font-semibold text-foreground">Calcular</span>
+          <span id="cart-shipping-val" class="font-bold text-white">Calcular</span>
         </div>
-        <div class="flex justify-between text-sm font-bold text-foreground pt-1 border-t border-border">
+        <div class="flex justify-between text-sm font-black text-white pt-1 border-t border-white/10">
           <span>Total Estimado</span>
-          <span id="cart-total-val" class="text-base text-teal-600 dark:text-teal-400 font-extrabold">R$ 0,00</span>
+          <span id="cart-total-val" class="text-base text-[#72e500] font-black">R$ 0,00</span>
         </div>
       </div>
 
-      <!-- Checkout Button -->
-      <button type="button" id="proceed-checkout-btn" class="w-full py-3 px-4 rounded-xl bg-teal-600 hover:bg-teal-700 active:scale-95 text-white font-bold text-sm shadow-lg shadow-teal-600/30 flex items-center justify-center gap-2 transition-all">
-        <i data-lucide="check" class="size-4"></i>
-        Finalizar Pedido
+      <!-- Checkout Button directly to WhatsApp 5521967538035 -->
+      <button type="button" id="proceed-checkout-btn" class="w-full py-3.5 px-4 rounded-xl btn-nex-primary text-black font-black text-sm shadow-xl flex items-center justify-center gap-2">
+        <i data-lucide="message-circle" class="size-4"></i>
+        Finalizar Pedido no WhatsApp
       </button>
 
     </div>
@@ -563,30 +560,18 @@
   </div>
 
   <!-- ==================== PRODUCT DETAILS QUICK VIEW MODAL ==================== -->
-  <div id="product-modal-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <div id="product-modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden transition-opacity"></div>
   <div id="product-details-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 pointer-events-none">
-    <div class="pointer-events-auto bg-surface border border-border rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative modal-content">
-      <button type="button" id="close-modal-btn" class="absolute top-4 right-4 p-2 rounded-full bg-muted/60 hover:bg-muted text-muted-foreground hover:text-foreground transition-colors z-20" title="Fechar">
+    <div class="pointer-events-auto bg-[#111116] border border-white/20 rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative modal-content">
+      <button type="button" id="close-modal-btn" class="absolute top-4 right-4 p-2 rounded-full bg-black/70 hover:bg-[#72e500] text-slate-400 hover:text-black transition-colors z-20" title="Fechar">
         <i data-lucide="x" class="size-5"></i>
       </button>
       <div id="product-modal-content"></div>
     </div>
   </div>
 
-
-
-  <!-- ==================== CHECKOUT SIMULATION MODAL ==================== -->
-  <div id="checkout-modal-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
-  <div id="checkout-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 pointer-events-none">
-    <div class="pointer-events-auto bg-surface border border-border rounded-3xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto relative modal-content">
-      <div id="checkout-modal-content"></div>
-    </div>
-  </div>
-
   <!-- ==================== TOAST NOTIFICATIONS CONTAINER ==================== -->
   <div id="toast-container"></div>
-
-  <!-- Toast notifications and scripts -->
 
   <!-- Products Database -->
   <script src="products-data.js"></script>
